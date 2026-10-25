@@ -6,25 +6,25 @@
 <style>
 
 body{
-background:#e6f7ff;
-font-family:Arial;
-text-align:center;
+    font-family:Arial;
+    background:#e6f7ff;
+    text-align:center;
 }
 
 .card{
-background:white;
-width:80%;
-margin:auto;
-padding:20px;
-border-radius:15px;
+    background:white;
+    width:80%;
+    margin:auto;
+    padding:20px;
+    border-radius:15px;
 }
 
-img{
-border-radius:50%;
-}
-
-ul{
-list-style:none;
+button{
+    background:blue;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
 }
 
 </style>
@@ -35,42 +35,43 @@ list-style:none;
 
 <div class="card">
 
-<img src="profile.jpg" width="200">
+<h1>Hello, I am Vishnu</h1>
 
-<h1>Vishnu</h1>
-
-<p>
-Aspiring Cloud Engineer
-</p>
+<p>Aspiring Cloud Engineer</p>
 
 <h2>Skills</h2>
 
-<ul>
+<ul style="list-style:none;">
 <li>Python</li>
 <li>Linux</li>
 <li>Cloud Computing</li>
 <li>GitHub</li>
 </ul>
 
-<h2>Projects</h2>
+<h2>Visitor Counter</h2>
 
-<ul>
-<li>Portfolio Website</li>
-</ul>
+<h1 id="count">0</h1>
 
-<h2>GitHub</h2>
-
-<a href="https://github.com/vishnu123s">
-Visit My GitHub
-</a>
-
-<h2>Goal</h2>
-
-<p>
-Become a Cloud Engineer
-</p>
+<button onclick="increase()">Visit</button>
 
 </div>
+
+<script>
+
+let count = localStorage.getItem("visitorCount") || 0;
+
+document.getElementById("count").innerText = count;
+
+function increase(){
+
+    count++;
+
+    localStorage.setItem("visitorCount", count);
+
+    document.getElementById("count").innerText = count;
+}
+
+</script>
 
 </body>
 </html>
